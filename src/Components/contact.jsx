@@ -10,7 +10,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white transition-transform transform hover:scale-105">
   <div className="container mx-auto my-8 p-8 bg-gray-800 text-white rounded shadow-lg font-montserrat lg:max-w-xl xl:max-w-2xl">
     <h2 className="text-4xl font-bold mb-6 text-center text-teal-400">Let's Connect</h2>
 
