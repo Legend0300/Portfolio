@@ -1,80 +1,59 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode, faRobot, faBrain } from '@fortawesome/free-solid-svg-icons';
-import { faReact, faJs, faPython , faNodeJs } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faJs, faPython, faNodeJs } from '@fortawesome/free-brands-svg-icons';
 
 const AboutStatic = () => {
   const cards = [
     {
-      title: 'Professional Expertise',
-      icon: faLaptopCode,
-      content: (
-        <>
-          <p className="mb-3">
-            As a Full Stack Developer, I specialize in the end-to-end development of web applications, from designing
-            intuitive user interfaces to implementing scalable backend solutions.
-          </p>
-          <p>
-            My proficiency extends to using
-            <FontAwesomeIcon icon={faJs} className="ml-2 mr-1 text-yellow-400" />JavaScript,
-            <FontAwesomeIcon icon={faPython} className="ml-1 mr-1 text-blue-500" />Python, and
-            <FontAwesomeIcon icon={faReact} className="ml-1 mr-1 text-teal-400" />React, along with frameworks such as
-            Express JS and Flask.
-          </p>
-          <p>
-            I am adept at creating dynamic and responsive applications, incorporating technologies like Material UI and
-            Tailwind CSS for visually appealing designs.
-          </p>
-        </>
-      ),
-    },
-    {
-        title: 'MERN Stack and Node.js',
-        icon: faNodeJs,
-        content: (
-          <>
-            <p className="mb-3">
-              Proficient in the MERN (MongoDB, Express.js, React, Node.js) stack for building full-stack web applications.
-            </p>
-            <p>
-              Additionally, experienced in server-side JavaScript programming with Node.js, enabling the development of scalable and efficient server applications.
-            </p>
-          </>
-        ),
-      },
-    {
-      title: 'Passion for Machine Learning',
+      title: 'Machine Learning Mastery',
       icon: faBrain,
       content: (
         <>
           <p className="mb-3">
-            Beyond web development, I have a strong passion for exploring the realms of Machine Learning and AI. I have
-            hands-on experience in Deep Learning, Scikit-Learn, Tensorflow, and have integrated the Open AI API into
-            projects.
+            My passion for Machine Learning and Artificial Intelligence is at the core of my professional expertise. I have developed proficiency in
+            <FontAwesomeIcon icon={faPython} className="ml-1 mr-1 text-blue-500" />Python, utilizing libraries like Tensorflow, PyTorch, and Scikit-Learn for creating sophisticated ML models.
           </p>
           <p>
-            This intersection of software development and artificial intelligence allows me to contribute to
-            cutting-edge solutions in a rapidly evolving technological landscape.
+            I've implemented solutions ranging from Natural Language Processing to deep learning applications, leveraging these technologies to drive innovation and efficiency in various projects.
           </p>
         </>
       ),
     },
     {
-      title: 'Generative AI and Trending Technologies',
+      title: 'Full Stack Development',
+      icon: faLaptopCode,
+      content: (
+        <>
+          <p className="mb-3">
+            As a Full Stack Developer, I specialize in the design and development of comprehensive web applications. I work with
+            <FontAwesomeIcon icon={faJs} className="ml-2 mr-1 text-yellow-400" />JavaScript,
+            <FontAwesomeIcon icon={faReact} className="ml-1 mr-1 text-teal-400" />React, and server-side technologies like
+            <FontAwesomeIcon icon={faNodeJs} className="ml-1 mr-1 text-green-500" />Node.js to build scalable and dynamic solutions.
+          </p>
+          <p>
+            My skill set also includes designing UI/UX with Material UI and Tailwind CSS, ensuring applications are not only functional but also visually appealing.
+          </p>
+        </>
+      ),
+    },
+    {
+      title: 'Emerging Technologies and Generative AI',
       icon: faRobot,
       content: (
         <>
           <p className="mb-3">
-            I am enthusiastic about Generative AI and constantly explore emerging technologies. I stay updated with the
-            latest trends and advancements in the tech industry, ensuring that I can contribute to cutting-edge
-            solutions.
+            I am deeply engaged with the latest advancements in Generative AI and other emerging technologies. My commitment to staying ahead in the tech landscape drives my continuous learning and application of state-of-the-art innovations.
+          </p>
+          <p>
+            This exploration includes practical applications and theoretical understanding, positioning me to contribute to and lead on cutting-edge projects.
           </p>
         </>
       ),
     },
   ];
 
- return (
+  return (
     <div className="about-container bg-gray-900 py-12 text-white h-full flex justify-center items-center">
       <div className="flex flex-col items-center max-w-2xl w-full">
         <h1 className="text-4xl font-bold mb-6 text-teal-400">About Me</h1>
@@ -84,7 +63,7 @@ const AboutStatic = () => {
               <FontAwesomeIcon icon={card.icon} className="mr-2" />
               {card.title}
             </h3>
-            <p>{card.content}</p>
+            {card.content}
           </div>
         ))}
       </div>

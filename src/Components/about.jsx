@@ -50,7 +50,7 @@ const About = () => {
       content: (
         <>
           <p className="mb-3">
-            As a Full Stack Developer, I specialize in the end-to-end development of web applications, from designing
+            I also specialize in the end-to-end development of web applications, from designing
             intuitive user interfaces to implementing scalable backend solutions.
           </p>
           <p>
@@ -73,8 +73,8 @@ const About = () => {
       content: (
         <>
           <p className="mb-3">
-            Beyond web development, I have a strong passion for exploring the realms of Machine Learning and AI. I have
-            hands-on experience in Deep Learning, Scikit-Learn, Tensorflow, and have integrated the Open AI API into
+            I have a strong passion for exploring the realms of Machine Learning and AI. I have
+            hands-on experience in Deep Learning, Scikit-Learn, Tensorflow, Hugging Face and have integrated the Open AI API into
             projects.
           </p>
           <p>

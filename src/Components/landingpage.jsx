@@ -19,7 +19,7 @@ const LandingPage = () => {
         </Fade>
         <Fade>
           <p className="text-lg text-center mb-8">
-            A passionate Full Stack Developer with expertise in building innovative web applications. 🌐
+            A passionate Machine Learning Engineer with expertise in building innovative ML applications. 🌐
           </p>
         </Fade>
         <Fade>

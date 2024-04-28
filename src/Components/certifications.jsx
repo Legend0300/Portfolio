@@ -3,6 +3,16 @@ import React from 'react';
 const Certifications = () => {
   const certificationList = [
     {
+      title: 'Machine Learning Specialization',
+      description: 'Completed a specialization in Machine Learning from Coursera. This certification signifies my understanding and application of machine learning concepts.',
+      link: 'https://coursera.org/share/fffa9e8fff63bfd5c29f995ac6d6fb24',
+    },
+    {
+      title: 'NLP Foundations',
+      description: 'This certification validates my expertise in building applications using NLP techniques. It covers topics like Vector Embeddings,  RNNs , LSTMs , Attention Mechanism and Transformers.',
+      link: 'https://learn.ineuron.ai/certificate/98650364-ebb7-43d4-a0fc-cdab1cc73779',
+    },
+    {
       title: 'React Certification',
       description: 'Certified in React development from Coursera. This certification validates my expertise in building modern and efficient user interfaces using React.',
       link: 'https://coursera.org/share/77755365f37e91d875393b2c83861431',
@@ -16,11 +26,6 @@ const Certifications = () => {
       title: 'Node JS Certification',
       description: 'Certified in Node.js development from Coursera. This certification demonstrates my skills in server-side JavaScript programming and building scalable applications.',
       link: 'https://coursera.org/share/b4e0c2d5667f2a968b0702a29561e3c0',
-    },
-    {
-      title: 'Machine Learning Specialization',
-      description: 'Completed a specialization in Machine Learning from Coursera. This certification signifies my understanding and application of machine learning concepts.',
-      link: 'https://coursera.org/share/fffa9e8fff63bfd5c29f995ac6d6fb24',
     },
     {
       title: 'Introduction to Front-End Development',
