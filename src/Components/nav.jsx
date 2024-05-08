@@ -51,8 +51,8 @@ const Nav = () => {
                     </NavLink>
                     {/* Download CV Button */}
                     <NavLink
-                        to="https://c5y18s9mdhikovk1.public.blob.vercel-storage.com/CV%20(1).PDF"
-                        download="cv (1).pdf"
+                        to="https://c5y18s9mdhikovk1.public.blob.vercel-storage.com/CV%20(1).PDF-MNdPfMJQ2gDQuubEKeDGqTBF2r13Gx.pdf"
+                        download="ML_CV.pdf"
                         className=" nav-link text-teal-400 hover:bg-teal-300 hover:text-gray-900 transition duration-300 ease-in-out rounded-full p-3"
                         target="_blank"  // Open link in a new tab/window
                         rel="noopener noreferrer"  // Recommended for security when using target="_blank"
