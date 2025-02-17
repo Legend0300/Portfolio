@@ -6,3 +6,21 @@ a{
   font-family: "Oxygen";
   font-weight: 600;
 }
+
+
+/* Emoji animation for the pointing effect */
+.emoji-animation {
+  display: inline-block;
+  animation: pointLeft 1s ease-in-out infinite;
+}
+
+/* Keyframes for moving left and then back */
+@keyframes pointLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
