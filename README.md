@@ -1,4 +1,4 @@
-# Portfolio: Muhammad Ahmed Mansur, Solutions Architect
+# Portfolio: Muhammad Ahmad, Solutions Architect
 
 A static Next.js site: four architecture case studies (problem, diagram, design decisions), an approach section,
 capabilities and contact. Hosted on Cloudflare Workers static assets.
