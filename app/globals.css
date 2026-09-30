@@ -100,14 +100,20 @@
     font-size: 11px;
     font-family: var(--font-mono), ui-monospace, monospace;
   }
+  .diagram-step {
+    font-size: 11px;
+    font-weight: 700;
+    fill: rgb(var(--bg));
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
   .diagram-label {
     font-size: 10.5px;
     font-family: var(--font-mono), ui-monospace, monospace;
   }
   .diagram-group {
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 12.5px;
+    font-weight: 600;
+    font-family: var(--font-sans), system-ui, sans-serif;
   }
 }
 

@@ -2,7 +2,8 @@ import { ArrowDownRight, ArrowUpRight, Github, Linkedin, Mail } from "lucide-rea
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import CaseStudy from "@/components/case-study";
-import { profile, glance, approach, caseStudies, alsoBuilt, capabilities, learning } from "@/lib/data";
+import { Icon } from "@/components/icon";
+import { profile, glance, approach, practices, caseStudies, alsoBuilt, skills, learning } from "@/lib/data";
 
 export default function HomePage() {
   return (
@@ -136,8 +137,34 @@ function Approach() {
             </li>
           ))}
         </ol>
+
+        <div className="mt-16">
+          <h3 className="eyebrow">Practices, and where you can see them</h3>
+          <dl className="mt-4 divide-y divide-line border-y border-line bg-bg">
+            {practices.map((pr) => (
+              <div key={pr.name} className="grid gap-1 px-4 py-4 md:grid-cols-[260px_1fr_150px] md:items-baseline md:gap-6">
+                <dt className="font-medium">{pr.name}</dt>
+                <dd className="text-sm text-muted">{pr.proof}</dd>
+                <dd className="text-sm">
+                  <a href={pr.href} className="link">
+                    {pr.where}
+                  </a>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
+  );
+}
+
+function Chip({ item }) {
+  return (
+    <li className="inline-flex items-center gap-2 rounded-lg border border-line bg-bg px-2.5 py-1.5 text-sm">
+      {item.icon && <Icon name={item.icon} size={18} />}
+      {item.name}
+    </li>
   );
 }
 
@@ -145,21 +172,37 @@ function Skills() {
   return (
     <section id="skills" className="rule" aria-labelledby="skills-label">
       <div className="shell py-20">
-        <SectionHead id="skills" eyebrow="03 · Capabilities" title="What I bring to an architecture" />
-        <dl className="mt-12 divide-y divide-line border-y border-line">
-          {capabilities.map((c) => (
-            <div key={c.label} className="grid gap-3 py-6 md:grid-cols-[260px_1fr] md:gap-8">
-              <dt className="font-medium">{c.label}</dt>
-              <dd>
-                <ul className="flex flex-wrap gap-x-6 gap-y-1.5 text-muted">
-                  {c.items.map((item) => (
-                    <li key={item}>{item}</li>
+        <SectionHead id="skills" eyebrow="03 · Technical skills" title="The tools behind the designs" lede="Technologies I have used to build and run the systems above, grouped by domain." />
+        <div className="mt-12 divide-y divide-line border-y border-line">
+          {skills.map((g) => (
+            <div key={g.label} className="grid gap-4 py-6 md:grid-cols-[220px_1fr] md:gap-8">
+              <h3 className="font-medium">{g.label}</h3>
+              {g.columns ? (
+                <div className="grid gap-6 md:grid-cols-3">
+                  {g.columns.map((c) => (
+                    <div key={c.title}>
+                      <p className="flex items-center gap-2 text-sm font-medium">
+                        <Icon name={c.icon} size={20} />
+                        {c.title}
+                      </p>
+                      <ul className="mt-3 flex flex-wrap gap-2">
+                        {c.items.map((it) => (
+                          <Chip key={it.name} item={it} />
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <ul className="flex flex-wrap gap-2">
+                  {g.items.map((it) => (
+                    <Chip key={it.name} item={it} />
                   ))}
                 </ul>
-              </dd>
+              )}
             </div>
           ))}
-        </dl>
+        </div>
 
         <div className="mt-14">
           <h3 className="eyebrow">Learning</h3>
