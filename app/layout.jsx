@@ -1,19 +1,29 @@
 import "./globals.css";
-import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import ThemeProvider from "@/components/theme-provider";
+import { profile } from "@/lib/data";
 
-const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
-const body = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-body" });
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+
+const title = `${profile.name} | ${profile.role}`;
+const description =
+  "Solutions architect designing cloud platforms on Azure, AWS and Cloudflare: infrastructure as code, Kubernetes, GitOps delivery and cost-aware architecture.";
 
 export const metadata = {
-  title: "Muhammad Ahmad | DevOps Portfolio",
-  description:
-    "DevOps engineer focused on cloud-native delivery, GitHub Actions CI/CD, Kubernetes, and Terraform on Azure.",
+  title,
+  icons: { icon: "/favicon.svg" },
+  description,
+  openGraph: { title, description, type: "website" },
+  twitter: { card: "summary", title, description },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning className={`${sans.variable} ${mono.variable}`}>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

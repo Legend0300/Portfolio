@@ -5,12 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview": "npx serve out",
+    "cf:deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
-    "@radix-ui/react-hover-card": "^1.1.2",
-    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.462.0",
     "next": "^14.2.6",
@@ -27,6 +26,8 @@
     "eslint-config-next": "^14.2.6",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
-    "typescript": "^5.6.3"
-  }
+    "typescript": "^5.6.3",
+    "wrangler": "^4.144.0"
+  },
+  "description": "Portfolio of Muhammad Ahmad, solutions architect: cloud platforms, IaC and delivery on Azure, AWS and Cloudflare."
 }

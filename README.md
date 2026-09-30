@@ -1,48 +1,32 @@
-# Portfolio Website
+# Portfolio: Muhammad Ahmad, Solutions Architect
 
-## Description
-This is a portfolio website showcasing skills, projects, certifications, and contact information.
+A static Next.js site: four architecture case studies (problem, diagram, design decisions), an approach section,
+capabilities and contact. Hosted on Cloudflare Workers static assets.
 
-## Table of Contents
-- [Installation](#installation)
-- [Routes](#routes)
-- [Navigation](#navigation)
-- [Download CV](#download-cv)
-- [Mobile Menu](#mobile-menu)
-- [License](#license)
-
-## Installation
-To install and set up the project, run the following commands:
+## Develop
 
 ```bash
 npm install
-npm start
+npm run dev        # http://localhost:3000
+npm run build      # static export to ./out
 ```
 
-## Routes
-List and briefly explain the available routes in your application.
+## Where things live
 
-- `/` - Home
-- `/skills` - Skills
-- `/projects` - Projects
-- `/certifications` - Certifications
-- `/contact` - Contact
+| path | what |
+| --- | --- |
+| `lib/data.js` | all content: profile, case studies, decisions, skills |
+| `lib/diagrams.js` | architecture diagrams as data (nodes, edges, groups); rendered by `components/diagram.jsx` |
+| `app/globals.css` | design tokens (light and dark) and component classes |
+| `public/cv.pdf` | résumé linked from the site |
 
-## Navigation
+To add a case study, append an entry to `caseStudies` in `lib/data.js` and a matching diagram to `lib/diagrams.js`.
 
-- **Home:** Link to the landing page.
-- **Skills:** Link to the Skills page.
-- **Projects:** Link to the Projects page.
-- **Certifications:** Link to the Certifications page.
-- **Contact:** Link to the Contact page.
+## Deploy (Cloudflare)
 
-## Download CV
-Provide a link to download the CV and explain its purpose.
+```bash
+npm run cf:deploy  # next build, then wrangler deploy (needs Cloudflare credentials)
+```
 
-[Download CV](https://c5y18s9mdhikovk1.public.blob.vercel-storage.com/CV%20(1).PDF)
-
-## Mobile Menu
-Website is made to be mobile friendly and responsive on all screens! 
-
-## License
-This portfolio website is free to use and customize.
+The GitHub workflow in `.github/workflows/ci.yml` builds on every push and pull request, and deploys `main` to
+Cloudflare when the repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` are set.

@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-09-26",
+  "assets": {
+    // `next build` exports the static site to ./out (next.config.js: output "export").
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  },
+  "observability": { "enabled": true }
+}

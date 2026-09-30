@@ -1,28 +1,25 @@
 /** @type {import('tailwindcss').Config} */
+const token = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 module.exports = {
   darkMode: ["class"],
-  content: [
-    "./app/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}",
-    "./pages/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./app/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
-        background: "hsl(210, 36%, 98%)",
-        foreground: "#0f172a",
-        card: "#ffffff",
-        muted: "#e2e8f0",
-        accent: "#2563eb",
-        accentSoft: "#dbeafe",
+        bg: token("bg"),
+        surface: token("surface"),
+        fg: token("fg"),
+        muted: token("muted"),
+        line: token("line"),
+        accent: token("accent"),
+        "accent-soft": token("accent-soft"),
       },
       fontFamily: {
-        display: ["'Manrope'", "system-ui", "sans-serif"],
-        body: ["'Satoshi'", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
-      boxShadow: {
-        soft: "0 10px 50px rgba(15, 23, 42, 0.08)",
-      },
+      maxWidth: { shell: "1080px" },
     },
   },
   plugins: [],

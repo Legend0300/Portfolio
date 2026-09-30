@@ -1,44 +1,33 @@
 import Link from "next/link";
-import { Github, Mail } from "lucide-react";
+import ThemeToggle from "@/components/theme-toggle";
+import { profile } from "@/lib/data";
 
 const links = [
+  { href: "#work", label: "Work" },
+  { href: "#approach", label: "Approach" },
   { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-200/70">
-      <div className="container-shell px-6 py-4 flex items-center justify-between">
-        <Link href="#home" className="font-extrabold tracking-tight text-xl text-slate-900">
-          Muhammad Ahmad
+    <header className="sticky top-0 z-40 border-b border-line bg-bg/85 backdrop-blur">
+      <div className="shell flex h-16 items-center justify-between gap-4">
+        <Link href="#top" className="text-[15px] font-semibold tracking-tight no-underline">
+          {profile.name}
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-slate-900 transition-colors">
-              {link.label}
+        <nav aria-label="Primary" className="hidden items-center gap-7 text-sm text-muted md:flex">
+          {links.map((l) => (
+            <Link key={l.href} href={l.href} className="no-underline transition-colors hover:text-fg">
+              {l.label}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <Link
-            href="https://github.com/Legend0300"
-            target="_blank"
-            className="btn-ghost text-sm"
-            aria-label="GitHub"
-          >
-            <Github className="w-4 h-4" />
-            GitHub
-          </Link>
-          <Link
-            href="#contact"
-            className="btn-primary text-sm"
-            aria-label="Contact"
-          >
-            <Mail className="w-4 h-4" />
-            Contact
-          </Link>
+          <ThemeToggle />
+          <a href={profile.cv} target="_blank" rel="noopener" className="btn h-9 px-4 no-underline">
+            Résumé
+          </a>
         </div>
       </div>
     </header>
