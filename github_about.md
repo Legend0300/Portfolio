@@ -1,4 +1,4 @@
-# Muhammad Ahmad
+# Muhammad Ahmed Mansur
 Solutions Architect · Cloud platforms · Infrastructure as code · Delivery pipelines
 
 I design cloud platforms that are cheap to run, safe to change, and easy to explain, across Azure, AWS and Cloudflare, and I build them end to end: Terraform modules, Kubernetes, pipelines, and the application on top.
@@ -21,5 +21,5 @@ Frame the constraints, compare options with their trade-offs, write the decision
 
 ## Contact
 - Email: ahmed.mansur.bhatti@gmail.com
-- LinkedIn: https://www.linkedin.com/in/muhammad-ahmad-b55539250/
+- LinkedIn: https://www.linkedin.com/in/muhammad-ahmed-b55539250/
 - GitHub: https://github.com/Legend0300

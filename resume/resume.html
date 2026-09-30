@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Muhammad Ahmed Mansur | Solutions Architect | Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 11mm 14mm 10mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font: 400 9pt/1.38 "Inter", "Segoe UI", Arial, sans-serif; color: #171717; }
+  a { color: inherit; text-decoration: none; }
+  header h1 { margin: 0; font-size: 21pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+  header .role { margin: 3px 0 0; font-size: 11pt; font-weight: 500; color: #1d4ed8; }
+  .contact { margin: 7px 0 0; display: flex; flex-wrap: wrap; gap: 2px 14px; color: #404040; font-size: 8.8pt; }
+  h2 { margin: 9px 0 4px; padding-bottom: 3px; border-bottom: 1px solid #d4d4d4; font-size: 8.6pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #171717; }
+  p { margin: 0; }
+  .summary { color: #262626; }
+  .item { margin-top: 5px; break-inside: avoid; }
+  .item:first-of-type { margin-top: 2px; }
+  .head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .head strong { font-weight: 600; font-size: 9.8pt; }
+  .head .meta { color: #525252; font-size: 8.6pt; white-space: nowrap; }
+  .stack { margin-top: 1px; color: #525252; font-size: 8.6pt; }
+  ul { margin: 2px 0 0; padding-left: 14px; }
+  li { margin: 0.6px 0; padding-left: 1px; }
+  li::marker { color: #737373; }
+  .skills { display: grid; grid-template-columns: 112px 1fr; gap: 3px 10px; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; color: #262626; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+  .muted { color: #525252; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Muhammad Ahmed Mansur</h1>
+  <p class="role">Solutions Architect · Cloud platforms and DevOps</p>
+  <p class="contact">
+    <span>ahmed.mansur.bhatti@gmail.com</span>
+    <span>+92 312 4066677</span>
+    <span>Lahore, Pakistan</span>
+    <span>portfolio.ahmed-mansur-bhatti.workers.dev</span>
+    <span>linkedin.com/in/muhammad-ahmed-b55539250</span>
+    <span>github.com/Legend0300</span>
+  </p>
+</header>
+
+<h2>Profile</h2>
+<p class="summary">
+  Computer science student and cloud engineer who designs and builds platforms across AWS, Azure and Cloudflare: infrastructure as code,
+  Kubernetes, GitOps delivery and cost-aware architecture. I document design decisions and trade-offs, and build the systems end to
+  end, from Terraform modules and pipelines to the application on top. Seeking a solutions architect or platform engineering role.
+</p>
+
+<h2>Selected projects</h2>
+
+<div class="item">
+  <div class="head"><strong>Solar Atlas: multi-environment AWS platform with GitOps</strong><span class="meta">Terraform · AWS · GitHub Actions</span></div>
+  <ul>
+    <li>Refactored a flat, prod-only Terraform repository into <b>7 reusable modules</b> with separate dev and prod stacks, each with its own S3 state key and native locking to limit blast radius.</li>
+    <li>Built GitOps workflows: plan on pull request, apply dev on merge, gated promotion to prod, drift detection and a hotfix path. Replaced stored AWS keys with GitHub OIDC.</li>
+    <li>Stack: ECS on EC2, Lambda, DynamoDB, S3 + CloudFront (origin access control), Route 53, ACM, IAM, SSM.</li>
+  </ul>
+</div>
+
+<div class="item">
+  <div class="head"><strong>Kubernetes platform on Azure with a documented cost model</strong><span class="meta">Terraform · AKS · Go · Kustomize</span></div>
+  <ul>
+    <li>Provisioned resource group, Container Registry and AKS with Terraform; granted the kubelet identity AcrPull so nodes pull images without secrets.</li>
+    <li>Delivered a Next.js frontend, a Go auth API (JWT) and a Go WebSocket chat service behind one ingress-nginx, with Postgres (StatefulSet) and Redis, from a single GitHub Actions workflow using Kustomize image overrides.</li>
+    <li>Designed for cost: AKS Free tier, ACR Basic, 0.1 GB/day log quota, a stop/start script and a documented teardown. github.com/Ahmed-Mansur/Go-Microservice-Pipeline</li>
+  </ul>
+</div>
+
+<div class="item">
+  <div class="head"><strong>DevOps Buddy: AI-native DevOps platform on Cloudflare</strong><span class="meta">Workers · D1 · Hono · React</span></div>
+  <ul>
+    <li>Designed a read-only-by-default SaaS: every upstream call passes one guard (GET/HEAD plus three listed read-only POSTs); the only write path needs a one-time approval, is limited to buddy/* branches, never merges, and is audited.</li>
+    <li>Modelled <b>54 Cloudflare products</b> as declarative registry entries, added event-driven automations (webhooks, cron), and designed around Workers Free limits (10 ms CPU, 50 subrequests). <b>310 automated tests.</b> Live demo available.</li>
+  </ul>
+</div>
+
+<div class="item">
+  <div class="head"><strong>DevSecOps pipeline for a FastAPI service</strong><span class="meta">GitHub Actions · Docker · Trivy</span></div>
+  <ul>
+    <li>Made flake8, Bandit, pytest and Trivy image scanning gates in CI; multi-stage, non-root images; Docker Compose with health checks for the API, Celery worker, Redis and Postgres. github.com/M-Fahim-Feroz/fastapi-devsecops-pipeline</li>
+  </ul>
+</div>
+
+<div class="item">
+  <div class="head"><strong>Earlier projects</strong></div>
+  <p class="muted">App Gate, a C++20 DNS proxy sinkhole with REST API and Electron dashboard · Flask CI/CD pipeline · Kubernetes starter with ingress · multi-user Todo list app · chat app with Socket.IO · Discord bot in Python · contact manager REST API.</p>
+</div>
+
+<h2>Technical skills</h2>
+<dl class="skills" style="margin:0">
+  <dt>Cloud</dt><dd><b>AWS:</b> ECS, EC2 Auto Scaling, Lambda, DynamoDB, S3, CloudFront, Route 53, IAM, SSM, CloudWatch. <b>Azure:</b> AKS, Container Registry, Monitor, Log Analytics. <b>Cloudflare:</b> Workers, D1, R2, KV, Pages.</dd>
+  <dt>Containers</dt><dd>Kubernetes, Docker, Helm, Kustomize, ingress-nginx</dd>
+  <dt>IaC and CI/CD</dt><dd>Terraform, Ansible, GitHub Actions, Jenkins, GitOps promotion, drift detection</dd>
+  <dt>Security</dt><dd>OIDC federation, Trivy, Bandit, JWT, secrets management (SSM, Kubernetes Secrets)</dd>
+  <dt>Observability</dt><dd>Prometheus, Grafana, Azure Monitor, CloudWatch</dd>
+  <dt>Data</dt><dd>PostgreSQL, Redis, DynamoDB, SQLite/D1, MySQL, MongoDB</dd>
+  <dt>Languages</dt><dd>Go, Python, TypeScript, JavaScript, C++ · React, Next.js, Node.js, Flask, FastAPI · Git</dd>
+</dl>
+
+<h2>Education</h2>
+<div class="head"><strong>BCS, COMSATS University Islamabad</strong><span class="meta">09/2022 – present · Lahore, Pakistan</span></div>
+<p class="muted">Bachelor of Computer Science, in progress.</p>
+
+<h2>Certifications and languages</h2>
+<dl class="skills" style="margin:0">
+  <dt>Certifications</dt><dd>Machine Learning Specialization · Node.js · React · JavaScript · Introduction to Front-End Development (Coursera)</dd>
+  <dt>Languages</dt><dd>Urdu, English</dd>
+</dl>
+</body>
+</html>

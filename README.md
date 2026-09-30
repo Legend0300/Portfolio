@@ -1,4 +1,4 @@
-# Portfolio: Muhammad Ahmad, Solutions Architect
+# Portfolio: Muhammad Ahmed Mansur, Solutions Architect
 
 A static Next.js site: four architecture case studies (problem, diagram, design decisions), an approach section,
 capabilities and contact. Hosted on Cloudflare Workers static assets.
@@ -18,6 +18,7 @@ npm run build      # static export to ./out
 | `lib/data.js` | all content: profile, case studies, decisions, skills |
 | `lib/diagrams.js` | architecture diagrams as data (nodes, edges, groups); rendered by `components/diagram.jsx` |
 | `app/globals.css` | design tokens (light and dark) and component classes |
+| `resume/resume.html` | résumé source; `node scripts/build-resume.mjs` renders it to `public/cv.pdf` (needs Playwright) |
 | `public/cv.pdf` | résumé linked from the site |
 
 To add a case study, append an entry to `caseStudies` in `lib/data.js` and a matching diagram to `lib/diagrams.js`.
